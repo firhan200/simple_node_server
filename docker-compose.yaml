@@ -8,6 +8,7 @@ services:
     command: node server.js
     volumes:
       - ./:/var/www/simple_node_server
+      - /node_modules:/var/www/simple_node_server/node_modules
     networks:
       - app-networks
     ports:
