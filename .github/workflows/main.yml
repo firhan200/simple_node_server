@@ -13,4 +13,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16.13.x'
-      - run: npm install
+      - run: |
+        docker compose down
+        docker compose build app
+        docker compose up -d
