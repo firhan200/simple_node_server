@@ -1,0 +1,24 @@
+version: '3.8'
+#Services
+services:
+  app:
+    image: simple_node_server_image
+    container_name: app
+    build: .
+    command: node server.js
+    volumes:
+      - ./:/var/www/simple_node_server
+    networks:
+      - app-networks
+    ports:
+      - 3000:3000
+
+#Networks
+networks:
+  app-networks:
+    driver: bridge
+
+#Volumes
+volumes:
+  dbdata:
+    driver: local
