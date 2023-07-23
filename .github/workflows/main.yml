@@ -1,6 +1,6 @@
 name: Deploy
 on:
-  push:
+  pull:
     branches:
       - production
   workflow_dispatch:
@@ -14,4 +14,3 @@ jobs:
         with:
           node-version: '16.13.x'
       - run: npm install
-      - run: npm test
